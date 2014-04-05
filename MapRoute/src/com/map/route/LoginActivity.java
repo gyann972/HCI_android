@@ -7,8 +7,8 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -19,7 +19,6 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * Activity which displays a login screen to the user, offering registration as
@@ -38,7 +37,7 @@ public class LoginActivity extends Activity {
 	 */
 	public static final String EXTRA_EMAIL = "com.example.android.authenticatordemo.extra.EMAIL";
 
-	/**
+	/**E
 	 * Keep track of the login task to ensure we can cancel it if requested.
 	 */
 	private UserLoginTask mAuthTask = null;
@@ -57,9 +56,7 @@ public class LoginActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
 		setContentView(R.layout.activity_login);
-
 		// Set up the login form.
 		mEmail = getIntent().getStringExtra(EXTRA_EMAIL);
 		mEmailView = (EditText) findViewById(R.id.email);
@@ -87,16 +84,14 @@ public class LoginActivity extends Activity {
 				new View.OnClickListener() {
 					@Override
 					public void onClick(View view) {
-						Intent intent = new Intent(LoginActivity.this, PathInfoActivity.class);
-						startActivity(intent);
+						attemptLogin();
 					}
 				});
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		super.onCreateOptionsMenu(menu);
-		getMenuInflater().inflate(R.menu.activity_login, menu);
+		//menu.setGroupVisible(R.id.log_out, true);
 		return true;
 	}
 
@@ -137,11 +132,12 @@ public class LoginActivity extends Activity {
 			mEmailView.setError(getString(R.string.error_field_required));
 			focusView = mEmailView;
 			cancel = true;
-		} else if (!mEmail.contains("@")) {
-			mEmailView.setError(getString(R.string.error_invalid_email));
-			focusView = mEmailView;
-			cancel = true;
 		}
+//		} else if (!mEmail.contains("@")) {
+//			mEmailView.setError(getString(R.string.error_invalid_email));
+//			focusView = mEmailView;
+//			cancel = true;
+//		}
 
 		if (cancel) {
 			// There was an error; don't attempt login and focus the first
@@ -151,16 +147,21 @@ public class LoginActivity extends Activity {
 			// Show a progress spinner, and kick off a background task to
 			// perform the user login attempt.
 			mLoginStatusMessageView.setText(R.string.login_progress_signing_in);
-			showProgress(true);
-			Context context = getApplicationContext();
+			//showProgress(true);
+			
+			
+			Intent intent = new Intent(LoginActivity.this, PathInfoActivity.class);
+			startActivity(intent);
+/*			Context context = getApplicationContext();
 			CharSequence text = "Good bye!";
 			int duration = Toast.LENGTH_SHORT;
 
 			Toast toast = Toast.makeText(context, text, duration);
 			toast.show();
 			mAuthTask = new UserLoginTask();
-			mAuthTask.execute((Void) null);
-		}
+			mAuthTask.execute((Void) null);*/
+
+		} 
 	}
 
 	/**

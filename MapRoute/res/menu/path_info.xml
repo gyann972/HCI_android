@@ -1,5 +1,5 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-
+  
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
@@ -9,13 +9,15 @@
         android:id="@+id/status_connected" 
         android:orderInCategory="100"
         android:showAsAction="always"
+        android:visible="true"
         android:icon="@drawable/user"
         android:title="@string/connected_status"
         />
-        <item
+   <item
         android:id="@+id/log_out" 
         android:orderInCategory="100"
         android:showAsAction="always"
+        android:visible="true"
         android:icon="@drawable/exit"
         android:title="@string/log_out"
         />

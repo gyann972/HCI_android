@@ -1,6 +1,6 @@
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".LoginActivity" >
+    tools:context=".LoginActivity">
 
     <!-- Login progress -->
 
@@ -36,9 +36,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
-        <LinearLayout
+       	<LinearLayout
             style="@style/LoginFormContainer"
             android:orientation="vertical" >
+
+       		<TextView
+       		    android:id="@+id/Message_accueil"
+       		    android:layout_width="match_parent"
+       		    android:layout_height="wrap_content"
+       		    android:layout_marginBottom="10dp"
+       		    android:layout_marginTop="10dp"
+       		    android:hint="@string/text_accueil" />
 
             <EditText
                 android:id="@+id/email"
@@ -60,6 +68,7 @@
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:singleLine="true" />
+			
 
             <Button
                 android:id="@+id/sign_in_button"
