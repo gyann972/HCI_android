@@ -1,5 +1,6 @@
 package com.map.route;
 
+import com.map.tracer.PathInfoActivity;
 import com.map.tracer.R;
 
 import android.animation.Animator;
@@ -7,6 +8,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -85,7 +87,8 @@ public class LoginActivity extends Activity {
 				new View.OnClickListener() {
 					@Override
 					public void onClick(View view) {
-						attemptLogin();
+						Intent intent = new Intent(LoginActivity.this, PathInfoActivity.class);
+						startActivity(intent);
 					}
 				});
 	}
