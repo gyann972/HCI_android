@@ -2,8 +2,10 @@ package com.map.tracer;
 
 import com.map.route.LoginActivity;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.annotation.SuppressLint;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
@@ -11,13 +13,18 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 public class PathInfoActivity extends Activity {
+	
+	public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
 	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_path_info);
-		getActionBar().setTitle("MapTracer");
+
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+			getActionBar().setTitle("MapTracer");
+	    }
 	}
 
 	@Override
