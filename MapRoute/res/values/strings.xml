@@ -10,5 +10,7 @@
     <string name ="path_submit">Submit</string>
     <string name ="connected_status">logged</string>
     <string name ="log_out">log out</string>
+    <string name ="fac2ScienceDesc">fac de sciences</string>
+    <string name ="fac2science">fac 2 sciences</string>
 	<string name ="text_accueil">Find As Simple Your Way In Nantes University</string>
 </resources>
