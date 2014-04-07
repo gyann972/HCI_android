@@ -1,20 +1,20 @@
 package com.map.tracer;
 
 import com.map.route.LoginActivity;
-
+import com.map.route.ViewActivity;
 import android.os.Build;
 import android.os.Bundle;
 import android.annotation.SuppressLint;
-import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 public class PathInfoActivity extends Activity {
 	
-	public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
+	public final static String CLASS_DEST = "com.map.route.CLASSDEST";
 
 	@SuppressLint("NewApi")
 	@Override
@@ -48,5 +48,13 @@ public class PathInfoActivity extends Activity {
 		}
 	}
 
-	
+	public void submitDestination(View view){
+    	Intent intent = new Intent(this, ViewActivity.class);
+    	EditText editTxt = (EditText)findViewById(R.id.target_point);
+    	String message = editTxt.getText().toString();
+    	intent.putExtra(CLASS_DEST, message);
+    	
+    	//Call another activity
+    	startActivity(intent);
+    }
 }

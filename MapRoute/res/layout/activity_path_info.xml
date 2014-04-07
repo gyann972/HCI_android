@@ -28,6 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:layout_marginTop="322dp"
-        android:text="@string/path_submit" />
+        android:text="@string/path_submit"
+        android:onClick="submitDestination" />
     
 </LinearLayout>
